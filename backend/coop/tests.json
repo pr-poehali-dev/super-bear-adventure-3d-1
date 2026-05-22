@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "name": "Create room",
+      "method": "POST",
+      "path": "/?action=create",
+      "body": { "world_id": 1, "world_name": "Лесной мир", "world_emoji": "🌲", "player_id": "test-host-001" },
+      "expectedStatus": 200,
+      "expectedBody": { "role": "host" },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
