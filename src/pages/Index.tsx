@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
+import Game3D from "@/components/Game3D";
 
 type Screen = "home" | "map" | "characters" | "shop" | "achievements";
 
@@ -138,7 +139,7 @@ function HomeScreen({ onNav }: { onNav: (s: Screen) => void }) {
   );
 }
 
-function MapScreen() {
+function MapScreen({ onPlay }: { onPlay: (world: typeof WORLDS[0]) => void }) {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
@@ -178,7 +179,7 @@ function MapScreen() {
               <>
                 <div className="font-game text-xl text-amber-900 mb-2">{w.emoji} {w.name}</div>
                 <p className="text-sm text-amber-800 mb-3">8 уровней · Собери все звёзды для разблокировки бонусного уровня!</p>
-                <button className="btn-game w-full py-3 text-base">▶ Начать</button>
+                <button className="btn-game w-full py-3 text-base" onClick={() => onPlay(w)}>▶ Играть!</button>
               </>
             );
           })()}
@@ -372,6 +373,17 @@ const NAV_ITEMS: { screen: Screen; emoji: string; label: string }[] = [
 
 export default function Index() {
   const [screen, setScreen] = useState<Screen>("home");
+  const [activeWorld, setActiveWorld] = useState<typeof WORLDS[0] | null>(null);
+
+  if (activeWorld) {
+    return (
+      <Game3D
+        worldName={activeWorld.name}
+        worldEmoji={activeWorld.emoji}
+        onExit={() => setActiveWorld(null)}
+      />
+    );
+  }
 
   return (
     <div
@@ -385,7 +397,7 @@ export default function Index() {
     >
       <div key={screen}>
         {screen === "home" && <HomeScreen onNav={setScreen} />}
-        {screen === "map" && <MapScreen />}
+        {screen === "map" && <MapScreen onPlay={setActiveWorld} />}
         {screen === "characters" && <CharactersScreen />}
         {screen === "shop" && <ShopScreen />}
         {screen === "achievements" && <AchievementsScreen />}
