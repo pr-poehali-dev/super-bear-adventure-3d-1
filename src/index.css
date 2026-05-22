@@ -4,89 +4,52 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 120 60% 92%;
+    --foreground: 30 40% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 30 40% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 30 40% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 36 100% 50%;
+    --primary-foreground: 30 40% 10%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 120 55% 40%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 120 30% 85%;
+    --muted-foreground: 120 20% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 200 90% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 120 30% 70%;
+    --input: 120 30% 85%;
+    --ring: 36 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 120 55% 35%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 36 100% 50%;
+    --sidebar-primary-foreground: 30 40% 10%;
+    --sidebar-accent: 120 55% 45%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 120 40% 30%;
+    --sidebar-ring: 36 100% 50%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --game-green: #3a8c2f;
+    --game-green-light: #5cb84a;
+    --game-amber: #f5a623;
+    --game-amber-dark: #d4881e;
+    --game-sky: #4ec9e8;
+    --game-brown: #7b4a1e;
+    --game-cream: #fdf3dc;
   }
 }
 
@@ -97,5 +60,265 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Nunito", sans-serif;
+    background: linear-gradient(180deg, #87d4f5 0%, #a8e8a0 60%, #5cb84a 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
   }
+}
+
+/* Game button style */
+.btn-game {
+  font-family: "Fredoka One", cursive;
+  background: linear-gradient(180deg, #f5c842 0%, #f5a623 50%, #d4881e 100%);
+  color: #5a2d00;
+  border: 3px solid #a36010;
+  border-radius: 50px;
+  box-shadow:
+    0 6px 0 #8a4d0a,
+    0 8px 16px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+.btn-game:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 0 #8a4d0a,
+    0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.btn-game:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 #8a4d0a,
+    0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Game card */
+.card-game {
+  background: linear-gradient(180deg, #fdf8ed 0%, #f5e8c0 100%);
+  border: 4px solid #c8901a;
+  border-radius: 20px;
+  box-shadow:
+    0 6px 0 #a36010,
+    0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Panel wood */
+.panel-wood {
+  background: linear-gradient(180deg, #a0622a 0%, #7b4a1e 100%);
+  border: 4px solid #5a2d00;
+  border-radius: 16px;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.2),
+    0 4px 0 #3d1a00;
+}
+
+/* Green grass panel */
+.panel-grass {
+  background: linear-gradient(180deg, #5cb84a 0%, #3a8c2f 100%);
+  border: 4px solid #2d6b22;
+  border-radius: 16px;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.2),
+    0 4px 0 #1e4a17;
+}
+
+/* Sky panel */
+.panel-sky {
+  background: linear-gradient(180deg, #7de8ff 0%, #4ec9e8 100%);
+  border: 4px solid #2ab0d4;
+  border-radius: 16px;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    0 4px 0 #1a8fb0;
+}
+
+/* Coin display */
+.coin-display {
+  background: linear-gradient(180deg, #ffd700 0%, #ffa500 100%);
+  border: 3px solid #cc7700;
+  border-radius: 30px;
+  box-shadow: 0 3px 0 #995500;
+}
+
+/* Star */
+.star-icon {
+  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.8));
+}
+
+/* Cloud */
+.cloud {
+  background: white;
+  border-radius: 50px;
+  box-shadow:
+    inset 0 -3px 0 rgba(0, 0, 0, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Float animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0) translateY(30px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1) translateY(-5px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+@keyframes spin-star {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes cloud-drift {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes pop-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+.animate-bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+.animate-wiggle {
+  animation: wiggle 1.5s ease-in-out infinite;
+}
+.animate-spin-star {
+  animation: spin-star 3s linear infinite;
+}
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+.animate-pop-in {
+  animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Stagger delays */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+.delay-600 {
+  animation-delay: 0.6s;
+}
+.delay-700 {
+  animation-delay: 0.7s;
+}
+.delay-800 {
+  animation-delay: 0.8s;
+}
+
+/* Nav tab */
+.nav-tab {
+  font-family: "Fredoka One", cursive;
+  background: linear-gradient(180deg, #5cb84a 0%, #3a8c2f 100%);
+  color: white;
+  border: 3px solid #2d6b22;
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  transition: all 0.15s ease;
+}
+.nav-tab.active {
+  background: linear-gradient(180deg, #fdf8ed 0%, #f5e8c0 100%);
+  color: #5a2d00;
+  border-color: #c8901a;
+  border-bottom: 3px solid #fdf8ed;
+  z-index: 10;
+}
+.nav-tab:not(.active):hover {
+  background: linear-gradient(180deg, #6dce5a 0%, #4a9c3f 100%);
 }
